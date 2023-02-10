@@ -21,11 +21,15 @@ builder.Services.AddTransient<IBooksRepoLayer, BooksRepoLayer>();
 builder.Services.AddTransient<IBooksManagerLayer, BooksManagerLayer>();
 builder.Services.AddTransient<IAdminRepoLayer, AdminRepoLayer>();
 builder.Services.AddTransient<IAdminManagerLayer, AdminManagerLayer>();
+builder.Services.AddTransient<ICartRepoLayer, CartRepoLayer>();
+builder.Services.AddTransient<ICartManagerLayer, CartManagerLayer>();
+builder.Services.AddTransient<IWhislistRepoLayer, WhislistRepoLayer>();
+builder.Services.AddTransient<IWhislistManagerLayer, WhislistManagerLayer>();
 
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "FundooNotes", Version = "V1", Description = "WelCome to FundooNotes" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Book Store Application", Version = "V1", Description = "WelCome to Book Store" });
     var jwtSecurityScheme = new OpenApiSecurityScheme
     {
         Scheme = "bearer",
